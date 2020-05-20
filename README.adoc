@@ -1,0 +1,73 @@
+//セクションに番号を振る
+:sectnums:
+//:sectnumlevels: 3
+//目次の位置(PDFだと常にtop)
+//:toc: right
+//:toc: left
+:toc: top
+:toc-title: 目次
+:preface-title: はじめに
+:important-caption: 重要
+:last-update-label: 最終更新
+:preface-title: まえがき
+:chapter-label:
+//:chapter-label: 見出し1の接頭辞
+//目次にするレベル
+:toclevels: 3
+//表を作成した場合のタイトル(表1, 表2と番号が振られていく)
+:table-caption: 表
+:figure-caption: 図
+//脚注でアイコンが無い場合に挿入される文字列
+:note-caption: 注記
+:tip-caption: ヒント
+:warning-caption: 警告
+:important-caption: 重要
+:caution-caption: 注意
+:appendix-caption: 付録
+:example-caption: 例
+//脚注にアイコン
+:icons: font
+//数式のサポート(defaultはasciimath。別途インストールしてあればlatexmathを指定可能)
+//http://asciimath.org/
+//http://docs.mathjax.org/en/latest/tex.html
+:stem: latexmath
+//ファイルパスなど
+:mkdirs: true
+// :to_dir: ./output/
+// :to_file: {to_dir}/hogehoge.pdf
+//画像の場所
+:imagesdir: ./images
+//:imagesoutdir: {to_dir}/images
+:imagesoutdir: ./images
+//ソースコードの場所
+:sourcedir: ./code_samples
+//作成者など
+:author: programan
+:email:
+:copyright:
+:revnumber: 0.1
+:revdate: 2020/05/20
+:version-label: v0.0.1
+
+//本文
+
+= Adoc Workbench
+
+== このイメージについて
+
+[%hardbreaks]
+AsciiDoc形式で日本語のドキュメントを書くために作成。
+翻訳機のベースイメージはasciidoctor/docker-asciidoctorである。
+もともと日本語も扱えるが、PlantUMLで日本語入りの図を作成した際に豆腐になったので、
+フォントをインストールしたのと、PDFを作成するためのコマンドが長いので、
+自作のシェルを登録した。
+
+
+== 使い方
+
+* 起動
+** `docker-compose run --rm app bash`
+** または、`./start_workbench.sh`
+* 実行
+** `asciidoctor-pdf -r asciidoctor-diagram -r asciidoctor-mathematical -a pdf-stylesdir=/usr/lib/ruby/gems/2.6.0/gems/asciidoctor-pdf-1.5.0/data/themes -a pdf-style=default-with-fallback-font-theme.yml -a scripts=cjk "asciidoc file"`
+** または、`adocpdf.sh "asciidoc file"`
