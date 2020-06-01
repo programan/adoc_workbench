@@ -1,6 +1,10 @@
 FROM asciidoctor/docker-asciidoctor:1.1.0
 MAINTAINER programan <github@programan.com>
 
+RUN set -x \
+  && apk update \
+  && apk add --no-cache su-exec
+
 # AsciiDoc内のPlantUMLで日本語を使った場合に豆腐になってしまうので対応
 RUN set -x \
   && mkdir -p /usr/share/fonts/opentype \
@@ -17,3 +21,7 @@ RUN set -x \
   && echo ' "$@"' >> adocpdf.sh \
   && mv adocpdf.sh /usr/local/bin/ \
   && chmod +x /usr/local/bin/adocpdf.sh
+
+COPY docker-entrypoint.sh /docker-entrypoint.sh
+RUN chmod +x /docker-entrypoint.sh
+ENTRYPOINT ["/docker-entrypoint.sh"]
