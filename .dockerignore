@@ -1,5 +1,6 @@
 .git
-.env
 Dockerfile
 docker-compose.*
 start_workbench.sh
+.gitignore
+.editorconfig
