@@ -45,9 +45,9 @@
 :author: programan
 :email:
 :copyright:
-:revnumber: 0.1
-:revdate: 2020/05/20
-:version-label: v0.0.1
+:revnumber: 0.2
+:revdate: 2020/11/14
+:version-label: v0.0.2
 
 //本文
 
@@ -69,5 +69,5 @@ AsciiDoc形式で日本語のドキュメントを書くために作成。
 ** `docker-compose run --rm app bash`
 ** または、`./start_workbench.sh`
 * 実行
-** `asciidoctor-pdf -r asciidoctor-diagram -r asciidoctor-mathematical -a pdf-stylesdir=/usr/lib/ruby/gems/2.6.0/gems/asciidoctor-pdf-1.5.0/data/themes -a pdf-style=default-with-fallback-font-theme.yml -a scripts=cjk "asciidoc file"`
+** `asciidoctor-pdf -r asciidoctor-diagram -r asciidoctor-mathematical -a pdf-stylesdir=/usr/lib/ruby/gems/2.7.0/gems/asciidoctor-pdf-1.5.3/data/themes -a pdf-style=default-with-fallback-font-theme.yml -a scripts=cjk "asciidoc file"`
 ** または、`adocpdf.sh "asciidoc file"`
