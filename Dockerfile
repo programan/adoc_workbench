@@ -1,4 +1,4 @@
-FROM asciidoctor/docker-asciidoctor:1.2.0
+FROM asciidoctor/docker-asciidoctor:1.12
 MAINTAINER programan <github@programan.com>
 
 RUN set -x \
