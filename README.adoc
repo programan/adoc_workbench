@@ -65,9 +65,8 @@ AsciiDoc形式で日本語のドキュメントを書くために作成。
 
 == 使い方
 
-* 起動
-** `docker-compose run --rm app bash`
-** または、`./start_workbench.sh`
-* 実行
-** `asciidoctor-pdf -r asciidoctor-diagram -r asciidoctor-mathematical -a pdf-stylesdir=/usr/lib/ruby/gems/2.7.0/gems/asciidoctor-pdf-1.5.3/data/themes -a pdf-style=default-with-fallback-font-theme.yml -a scripts=cjk "asciidoc file"`
-** または、`adocpdf.sh "asciidoc file"`
+* ビルド方法
+** `docker build -t programan/adoc_workbench:1 .`
+* コンパイル方法
+** ドキュメントのソースファイルをコンパイルしてPDFを作成
+*** `docker run --rm -it --user $(id -u $USER):$(id -g $USER) -v ${PWD}:/documents programan/adoc_workbench:1 adocpdf.sh "adoc file name"`
