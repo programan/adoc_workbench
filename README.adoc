@@ -68,5 +68,8 @@ AsciiDoc形式で日本語のドキュメントを書くために作成。
 * ビルド方法
 ** `docker build -t programan/adoc_workbench:1 .`
 * コンパイル方法
-** ドキュメントのソースファイルをコンパイルしてPDFを作成
+** ドキュメントのソースファイルをコンパイルしてPDFを作成 - Linux
 *** `docker run --rm -it --user $(id -u $USER):$(id -g $USER) -v ${PWD}:/documents programan/adoc_workbench:1 adocpdf.sh "adoc file name"`
+** ドキュメントのソースファイルをコンパイルしてPDFを作成 - Windows
+*** `docker run --rm -it -v ${PWD}:/documents programan/adoc_workbench:1 adocpdf.sh "adoc file name"`
+
