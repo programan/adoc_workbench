@@ -1,9 +1,7 @@
 FROM asciidoctor/docker-asciidoctor:1.17
 MAINTAINER programan <github@programan.com>
 
-COPY ./asciidoctor/build/files/docker-entrypoint.sh /docker-entrypoint.sh
-COPY ./asciidoctor/build/files/patches/ /patches/
-RUN chmod +x /docker-entrypoint.sh
+COPY ./files/patches/ /patches/
 
 # AsciiDoc内のPlantUMLで日本語を使った場合に豆腐になってしまうので別途fontを入れて対応
 RUN set -x \
@@ -26,4 +24,4 @@ RUN set -x \
 
 WORKDIR /documents
 
-ENTRYPOINT ["/docker-entrypoint.sh"]
+CMD ["/bin/bash"]
