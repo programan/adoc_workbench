@@ -73,3 +73,6 @@ AsciiDoc形式で日本語のドキュメントを書くために作成。
 ** ドキュメントのソースファイルをコンパイルしてPDFを作成 - Windows
 *** `docker run --rm -it -v ${PWD}:/documents programan/adoc_workbench:1 adocpdf.sh "adoc file name"`
 
+== 参考
+
+. https://docs.asciidoctor.org/
