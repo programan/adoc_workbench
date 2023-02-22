@@ -1,0 +1,15 @@
+extends: default
+font:
+  catalog:
+    merge: true
+    MPLUS_1p:
+      normal: /usr/local/share/fonts/truetype/M_PLUS_1p/static/MPLUS1-Regular.ttf
+      bold: /usr/local/share/fonts/truetype/M_PLUS_1p/static/MPLUS1-Bold.ttf
+      italic: /usr/local/share/fonts/truetype/M_PLUS_1p/static/MPLUS1-Regular.ttf
+      bold_italic: /usr/local/share/fonts/truetype/M_PLUS_1p/static/MPLUS1-Bold.ttf
+    M+ 1p Fallback: GEM_FONTS_DIR/mplus1p-regular-fallback.ttf
+    Noto Emoji: GEM_FONTS_DIR/notoemoji-subset.ttf
+  fallbacks: [M+ 1p Fallback, Noto Emoji]
+base:
+  font_family: MPLUS_1p
+
